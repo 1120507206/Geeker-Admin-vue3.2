@@ -16,9 +16,15 @@
 			"title": "超级表格",
 			"path": "/proTable",
 			"children": [
+
 				{
 					"path": "/proTable/useHooks",
 					"title": "使用 Hooks",
+					"icon": "menu"
+				},
+				{
+					"path": "/proTable/userTable",
+					"title": "测试 Hooks",
 					"icon": "menu"
 				},
 				{

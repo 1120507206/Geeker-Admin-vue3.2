@@ -23,6 +23,17 @@ const proTableRouter: Array<RouteRecordRaw> = [
 				}
 			},
 			{
+				path: "/proTable/userTable",
+				name: "userTable",
+				component: () => import("@/views/proTable/userTable/index.vue"),
+				meta: {
+					keepAlive: true,
+					requiresAuth: true,
+					title: "测试 Hooks",
+					key: "userTable"
+				}
+			},
+			{
 				path: "/proTable/useComponent",
 				name: "useComponent",
 				component: () => import("@/views/proTable/useComponent/index.vue"),

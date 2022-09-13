@@ -65,7 +65,11 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 				symbolId: "icon-[dir]-[name]"
 			}),
 			// * EsLint 报错信息显示在浏览器界面上
-			eslintPlugin(),
+			eslintPlugin(
+				{
+					cache: false,
+				}
+			),
 			// * vite 可以使用 jsx/tsx 语法
 			vueJsx(),
 			// * name 可以写在 script 标签上
