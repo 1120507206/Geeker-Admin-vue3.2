@@ -15,7 +15,7 @@ import { useTheme } from "@/hooks/useTheme";
 useTheme();
 
 const globalStore = GlobalStore();
-// 配置element按钮文字中间是否有空格
+// 配置element1按钮文字中间是否有空格
 const config = reactive({
 	autoInsertSpace: false
 });
