@@ -36,10 +36,10 @@ module.exports = {
 
 		// typeScript (https://typescript-eslint.io/rules)
 		"@typescript-eslint/no-unused-vars": "error", // 禁止定义未使用的变量
+		"@typescript-eslint/prefer-ts-expect-error": "error", // 禁止使用 @ts-ignore
 		"@typescript-eslint/no-inferrable-types": "off", // 可以轻松推断的显式类型可能会增加不必要的冗长
 		"@typescript-eslint/no-namespace": "off", // 禁止使用自定义 TypeScript 模块和命名空间。
 		"@typescript-eslint/no-explicit-any": "off", // 禁止使用 any 类型
-		"@typescript-eslint/ban-ts-ignore": "off", // 禁止使用 @ts-ignore
 		"@typescript-eslint/ban-types": "off", // 禁止使用特定类型
 		"@typescript-eslint/explicit-function-return-type": "off", // 不允许对初始化为数字、字符串或布尔值的变量或参数进行显式类型声明
 		"@typescript-eslint/no-var-requires": "off", // 不允许在 import 语句中使用 require 语句
@@ -53,7 +53,7 @@ module.exports = {
 		"vue/no-v-html": "off", // 禁止使用 v-html
 		"vue/script-setup-uses-vars": "error", // 防止<script setup>使用的变量<template>被标记为未使用，此规则仅在启用该no-unused-vars规则时有效。
 		"vue/v-slot-style": "error", // 强制执行 v-slot 指令样式
-		"vue/no-mutating-props": "off", // 不允许组件 prop的改变（明天找原因）
+		"vue/no-mutating-props": "off", // 不允许组件 prop的改变
 		"vue/custom-event-name-casing": "off", // 为自定义事件名称强制使用特定大小写
 		"vue/attributes-order": "off", // vue api使用顺序，强制执行属性顺序
 		"vue/one-component-per-file": "off", // 强制每个组件都应该在自己的文件中

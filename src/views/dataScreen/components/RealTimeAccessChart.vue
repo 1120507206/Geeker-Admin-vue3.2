@@ -13,8 +13,6 @@
 </template>
 
 <script setup lang="ts">
-// Echarts 为init（dom元素后的类型）
-// EChartsOption 为 option 的类型
 import { ref, Ref } from "vue";
 import { ECharts, init } from "echarts";
 import "echarts-liquidfill";
@@ -235,7 +233,6 @@ defineExpose({
 		position: absolute;
 		top: -30px;
 		right: 5px;
-		font-family: "PingFang SC";
 		font-size: 14px;
 		color: #ffffff;
 		i {

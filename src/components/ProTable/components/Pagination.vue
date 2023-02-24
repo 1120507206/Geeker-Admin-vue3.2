@@ -1,6 +1,7 @@
 <template>
+	<!-- 分页组件 -->
 	<el-pagination
-		:currentPage="pageable.pageNum"
+		:current-page="pageable.pageNum"
 		:page-size="pageable.pageSize"
 		:page-sizes="[10, 25, 50, 100]"
 		:background="true"
@@ -11,7 +12,7 @@
 	></el-pagination>
 </template>
 
-<script setup lang="ts" name="pagination">
+<script setup lang="ts" name="Pagination">
 interface Pageable {
 	pageNum: number;
 	pageSize: number;
