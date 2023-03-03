@@ -23,6 +23,17 @@ const dashboardRouter: Array<RouteRecordRaw> = [
 				}
 			},
 			{
+				path: "/dashboard/svgEdit",
+				name: "svgEdit",
+				component: () => import("@/views/dashboard/svgEdit/index.vue"),
+				meta: {
+					keepAlive: true,
+					requiresAuth: true,
+					title: "svg编辑器",
+					key: "svgEdit"
+				}
+			},
+			{
 				path: "/dashboard/embedded",
 				name: "embedded",
 				component: () => import("@/views/dashboard/embedded/index.vue"),

@@ -16,7 +16,6 @@
 			"title": "超级表格",
 			"path": "/proTable",
 			"children": [
-
 				{
 					"path": "/proTable/useHooks",
 					"title": "使用 Hooks",
@@ -42,6 +41,11 @@
 				{
 					"path": "/dashboard/dataVisualize",
 					"title": "数据可视化",
+					"icon": "menu"
+				},
+				{
+					"path": "/dashboard/svgEdit",
+					"title": "svg编辑器",
 					"icon": "menu"
 				},
 				{
