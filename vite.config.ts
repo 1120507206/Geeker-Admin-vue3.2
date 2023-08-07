@@ -13,7 +13,6 @@ import importToCDN from "vite-plugin-cdn-import";
 // import AutoImport from "unplugin-auto-import/vite";
 // import Components from "unplugin-vue-components/vite";
 // import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
-
 // @see: https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 	const env = loadEnv(mode, process.cwd());
@@ -43,10 +42,16 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 			// 代理跨域（mock 不需要配置跨域，直接能访问，这里只是个示例）
 			proxy: {
 				"/api": {
-					// target: "https://www.fastmock.site/mock/f81e8333c1a9276214bcdbc170d9e0a0", // fastmock
-					target: "https://mock.mengxuegu.com/mock/629d727e6163854a32e8307e", // easymock
+					target: "https://www.fastmock.site/mock/f81e8333c1a9276214bcdbc170d9e0a0", // fastmock
+					// target: "https://mock.mengxuegu.com/mock/629d727e6163854a32e8307e", // easymock
 					changeOrigin: true,
 					rewrite: path => path.replace(/^\/api/, "")
+				},
+				"/zc": {
+					target: "https://www.fastmock.site/mock/f81e8333c1a9276214bcdbc170d9e0a0", // fastmock
+					// target: "http://192.168.3.251:3000", // easymock
+					changeOrigin: true,
+					rewrite: path => path.replace(/^\/zc/, "")
 				}
 			}
 		},
@@ -65,11 +70,9 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 				symbolId: "icon-[dir]-[name]"
 			}),
 			// * EsLint 报错信息显示在浏览器界面上
-			eslintPlugin(
-				{
-					cache: false,
-				}
-			),
+			eslintPlugin({
+				cache: false
+			}),
 			// * vite 可以使用 jsx/tsx 语法
 			vueJsx(),
 			// * name 可以写在 script 标签上

@@ -3,14 +3,18 @@
 		<el-form-item prop="username">
 			<el-input v-model="loginForm.username" placeholder="用户名：admin / user">
 				<template #prefix>
-					<el-icon class="el-input__icon"><user /></el-icon>
+					<el-icon class="el-input__icon">
+						<user />
+					</el-icon>
 				</template>
 			</el-input>
 		</el-form-item>
 		<el-form-item prop="password">
 			<el-input type="password" v-model="loginForm.password" placeholder="密码：123456" show-password autocomplete="new-password">
 				<template #prefix>
-					<el-icon class="el-input__icon"><lock /></el-icon>
+					<el-icon class="el-input__icon">
+						<lock />
+					</el-icon>
 				</template>
 			</el-input>
 		</el-form-item>
@@ -58,6 +62,8 @@ const loading = ref<boolean>(false);
 const router = useRouter();
 // login
 const login = (formEl: FormInstance | undefined) => {
+	ssoLogin();
+	router.push({ name: "home" });
 	if (!formEl) return;
 	formEl.validate(async valid => {
 		if (!valid) return;
@@ -80,6 +86,44 @@ const login = (formEl: FormInstance | undefined) => {
 			loading.value = false;
 		}
 	});
+};
+
+//单点登录模拟
+const ssoLogin = () => {
+	// 获取 token
+	let token = "Bearer 9803278f-686f-45c4-aa85-afb53b0da664";
+	// Bearer fecd80d8-00eb-4a91-8392-123df2a3cc76
+	// 动态创建一个不可见的iframe，在iframe中加载一个跨域HTML
+	let iframe = document.createElement("iframe");
+	let url = "http://192.168.3.251:8010/";
+	iframe.src = url;
+	document.body.append(iframe);
+	// 使用postMessage()方法将token传递给iframe
+	// setTimeout(function () {
+	// 	iframe.contentWindow.postMessage(token, url);
+	// }, 4000);
+	setTimeout(function () {
+		iframe.remove();
+		// window.open(url)
+	}, 6000);
+	iframe.contentWindow.location.reload();
+	if (iframe.attachEvent) {
+		// 兼容浏览器判断 // iframe的加载完成函数
+		iframe.attachEvent("onload", function () {
+			const iframeWin = iframe.contentWindow;
+			//传递参数
+			iframeWin.postMessage(token, "*");
+			console.log("兼容浏览器判断 :>> ");
+		});
+	} else {
+		// iframe的加载完成函数
+		iframe.onload = function () {
+			const iframeWin = iframe.contentWindow;
+			console.log("iframe的加载完成函数 :>> ");
+			//传递参数
+			iframeWin.postMessage(token, "*");
+		};
+	}
 };
 
 // resetForm

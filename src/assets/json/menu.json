@@ -39,13 +39,25 @@
 			"path": "/dashboard",
 			"children": [
 				{
+					"path": "/dashboard/test",
+					"title": "测试页",
+					"icon": "menu"
+				},
+
+				{
 					"path": "/dashboard/dataVisualize",
 					"title": "数据可视化",
 					"icon": "menu"
 				},
 				{
-					"path": "/dashboard/svgEdit",
-					"title": "svg编辑器",
+					"path": "/dashboard/codegeneration",
+					"title": "代码生成",
+					"icon": "menu"
+				},
+
+				{
+					"path": "/dashboard/logicFlow",
+					"title": "流程图",
 					"icon": "menu"
 				},
 				{

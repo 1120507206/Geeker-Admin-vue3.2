@@ -12,6 +12,28 @@ const dashboardRouter: Array<RouteRecordRaw> = [
 		},
 		children: [
 			{
+				path: "/dashboard/test",
+				name: "test",
+				component: () => import("@/views/dashboard/test/index.vue"),
+				meta: {
+					keepAlive: true,
+					requiresAuth: true,
+					title: "测试页",
+					key: "test"
+				}
+			},
+			{
+				path: "/dashboard/codegeneration",
+				name: "codegeneration",
+				component: () => import("@/views/dashboard/codegeneration/index.vue"),
+				meta: {
+					keepAlive: true,
+					requiresAuth: true,
+					title: "代码生成",
+					key: "codegeneration"
+				}
+			},
+			{
 				path: "/dashboard/dataVisualize",
 				name: "dataVisualize",
 				component: () => import("@/views/dashboard/dataVisualize/index.vue"),
@@ -22,15 +44,26 @@ const dashboardRouter: Array<RouteRecordRaw> = [
 					key: "dataVisualize"
 				}
 			},
+			// {
+			// 	path: "/dashboard/svgEdit",
+			// 	name: "svgEdit",
+			// 	component: () => import("@/views/dashboard/svgEdit/index.vue"),
+			// 	meta: {
+			// 		keepAlive: true,
+			// 		requiresAuth: true,
+			// 		title: "svg编辑器",
+			// 		key: "svgEdit"
+			// 	}
+			// },
 			{
-				path: "/dashboard/svgEdit",
-				name: "svgEdit",
-				component: () => import("@/views/dashboard/svgEdit/index.vue"),
+				path: "/dashboard/logicFlow",
+				name: "logicFlow",
+				component: () => import("@/views/dashboard/logicFlow/index.vue"),
 				meta: {
 					keepAlive: true,
 					requiresAuth: true,
-					title: "svg编辑器",
-					key: "svgEdit"
+					title: "流程图",
+					key: "logicFlow"
 				}
 			},
 			{

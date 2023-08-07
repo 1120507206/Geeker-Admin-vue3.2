@@ -83,5 +83,6 @@
 		"zhongyingwen",
 		"zhuti",
 		"zlevel"
-	]
+	],
+	"i18n-ally.localesPaths": ["src/language"]
 }
